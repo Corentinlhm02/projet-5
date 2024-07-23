@@ -1,0 +1,43 @@
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 55px; 
+    padding: 55px; 
+    padding-right: 70px;
+    padding-bottom: 75px;
+    margin: 0 auto; 
+    border-radius: 15px;
+    background: #F6F6F6;
+
+
+}
+
+.thumb{
+    position: relative;
+    aspect-ratio: 1 / 1;
+    color: white;
+}
+
+.thumb img {
+
+width: 100%;
+height: 100%;
+border-radius: 10px;
+object-fit: cover;
+cursor: pointer;
+
+}
+
+.thumb h2{
+    position: absolute;
+    bottom: 5px; 
+    left: 25px; 
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25.67px;
+    text-align: left;
+    cursor: pointer;
+    
+}

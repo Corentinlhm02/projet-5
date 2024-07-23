@@ -1,0 +1,47 @@
+// header
+header{
+    margin: 40px 100px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+header img{
+    width: 210px;
+    height: 68px;
+}
+
+header nav{
+    width: 20%;
+    display: flex;
+    
+
+}
+
+header ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 34.22px;
+    text-align: right;
+    list-style-type: none;
+    cursor: pointer;
+   
+    
+}
+
+header a{
+    text-decoration: none;
+    color: black;
+    &.underline{
+        text-decoration: underline;
+    }
+
+}
+
+header li:hover{
+    text-decoration: underline;
+}
