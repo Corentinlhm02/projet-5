@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import annonces from "../data/annonces.json";
 import Carousel from './CarrouselAnnonce';
 
@@ -10,8 +10,15 @@ const FindAnnoncesID = (id) => {
 const Annonce = () => {
     const { id } = useParams();
     const annonce = FindAnnoncesID(id);
-    const pictures = annonce.pictures;
-    const hostPicture = annonce.host.picture;
+    console.log(annonce);
+    let pictures = [];
+    let hostPicture = "";
+    let rating = 0; // Par défaut, la note est de 0
+    if (annonce) {     
+        pictures = annonce.pictures;
+        hostPicture = annonce.host.picture;
+        rating = annonce.rating; // Récupère la note de l'annonce
+    }  
 
     const [isDescriptionOpen, setDescriptionOpen] = useState(false);
     const [isEquipmentsOpen, setEquipmentsOpen] = useState(false);
@@ -24,8 +31,24 @@ const Annonce = () => {
         setEquipmentsOpen(!isEquipmentsOpen);
     };
 
+    // Fonction pour générer les étoiles
+    const renderStars = (rating) => {
+        const stars = [];
+        for (let i = 1; i <= 5; i++) {
+            stars.push(
+                <i
+                    key={i}
+                    className={`fa-solid fa-star ${i <= rating ? 'star-colored' : 'star-grey'}`}
+                ></i>
+            );
+        }
+        return stars;
+    };
+
     return (
-        <div className="info"> 
+        <div className="pageannonce">
+        {annonce ?(        
+            <div className="info"> 
             <Carousel pictures={pictures} />
             <div className="host">
             <div className="title">
@@ -37,15 +60,21 @@ const Annonce = () => {
                     <img src={hostPicture} alt="" />
                 </div> 
             </div>
-            <div className="tags">
-                    {annonce.tags.map((tag, index) => (
-                        <span key={index} className="tag">{tag}</span>
-                    ))}
+            <div className="tagAndStars">
+                <div className="tags">
+                        {annonce.tags.map((tag, index) => (
+                            <span key={index} className="tag">{tag}</span>
+                        ))}
                 </div>
+                <div className="stars">
+                    {renderStars(rating)}
+                </div>
+            </div>
             <div className="button">
                 <div className="buttonDescription">
                     <button className="accordion" onClick={toggleDescription}>
                         Description
+                        <i className={`fa-solid fa-chevron-up ${isDescriptionOpen ? 'open' : ''}`}></i>
                     </button>
                     <div className={`panel ${isDescriptionOpen ? 'open' : ''}`}>
                         <p>{annonce.description}</p>
@@ -54,6 +83,7 @@ const Annonce = () => {
                 <div className="buttonEquipements">
                     <button className="accordion" onClick={toggleEquipments}>
                         Equipments
+                        <i className={`fa-solid fa-chevron-up ${isEquipmentsOpen ? 'open' : ''}`}></i>
                     </button>
                 
                     <div className={`panel ${isEquipmentsOpen ? 'open' : ''}`}>
@@ -65,9 +95,13 @@ const Annonce = () => {
                     </div>
                 </div>
             </div>
+        </div>):(
+            <Navigate to ="*"/>
+        )}
         </div>
     );
 };
 
 export default Annonce;
+
 

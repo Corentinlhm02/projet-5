@@ -37,6 +37,17 @@ p{
     margin-bottom: 40px;
 }
 
+i {
+    margin-left: 10px;
+    font-size: 25px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.accordion i.open {
+    transform: rotate(180deg);
+}
+
 .buttonDescription, .buttonEquipements {
     width: 45%;
 }
@@ -53,6 +64,13 @@ p{
     outline: none;
     font-size: 15px;
     transition: 0.4s;
+    position: relative;
+    font-family: Montserrat;
+    font-weight: 800;
+    line-height: 34.22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .accordion:hover,
@@ -71,7 +89,8 @@ p{
 
 .panel.open {
     display: block;
-    max-height: 1000px; 
+    width: 100%;
+
 }
 
 //  **********tags**********
@@ -96,6 +115,27 @@ p{
     line-height: 19.96px;
     text-align: center;
     
+}
+.tagAndStars{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.stars{
+    width: 14%;
+    display: flex;
+    gap: 8%;
+    .fa-solid{   
+        font-size: 24px;
+
+    }
+    .star-colored {
+        color: #FF6060;
+        
+    }
+    .star-grey {
+        color: #E3E3E3;
+    }
 }
 .host {
     display: flex;

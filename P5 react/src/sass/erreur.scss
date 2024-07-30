@@ -1,0 +1,34 @@
+.erreur{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 139px;
+    h1{
+        font-family: Montserrat;
+        margin: 0;
+        font-size: 20vw;
+        font-weight: 700;
+        line-height: 410.69px;
+        text-align: center;
+        color: #FF6060;
+    }
+    p{
+        font-family: Montserrat;
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 51.34px;
+        text-align: left;
+        margin: 0 10%;
+        color: #FF6060;
+    }
+    a{
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 25.67px;
+        text-align: left;
+        color: black;        
+        margin-bottom: 10%;
+    }
+}
