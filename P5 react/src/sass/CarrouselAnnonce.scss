@@ -16,7 +16,19 @@
     object-fit: cover;
     flex-shrink: 0;
 }
-
+.currentIndex {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white; /* ou la couleur de votre choix */
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25.67px;
+    text-align: center;
+    
+}
 .carousel-buttons {
     position: absolute;
     top: 50%;

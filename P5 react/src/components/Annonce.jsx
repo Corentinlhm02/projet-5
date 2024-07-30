@@ -10,14 +10,13 @@ const FindAnnoncesID = (id) => {
 const Annonce = () => {
     const { id } = useParams();
     const annonce = FindAnnoncesID(id);
-    console.log(annonce);
     let pictures = [];
     let hostPicture = "";
-    let rating = 0; // Par défaut, la note est de 0
+    let rating = 0; 
     if (annonce) {     
         pictures = annonce.pictures;
         hostPicture = annonce.host.picture;
-        rating = annonce.rating; // Récupère la note de l'annonce
+        rating = annonce.rating;
     }  
 
     const [isDescriptionOpen, setDescriptionOpen] = useState(false);

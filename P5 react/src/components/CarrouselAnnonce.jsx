@@ -13,14 +13,14 @@ const Carousel = ({ pictures }) => {
 
     return (
         <div className="carousel">
-            <h1 className="currentIndex">
-                {currentIndex + 1} /{pictures.length}
-            </h1>
             <div className="carousel-inner" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                 {pictures.map((picture, index) => (
                     <img src={picture} alt={`Picture ${index + 1}`} key={index} />
                 ))}
             </div>
+            <h1 className="currentIndex">
+                {currentIndex + 1} / {pictures.length}
+            </h1>
 
             <div className="carousel-buttons">
                 <button onClick={handlePrev}>❮</button>
@@ -31,3 +31,4 @@ const Carousel = ({ pictures }) => {
 };
 
 export default Carousel;
+
