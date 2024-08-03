@@ -1,3 +1,4 @@
+@import "colors";
 .erreur{
     display: flex;
     flex-direction: column;
@@ -11,7 +12,7 @@
         font-weight: 700;
         line-height: 410.69px;
         text-align: center;
-        color: #FF6060;
+        color: $primary_color;
     }
     p{
         font-family: Montserrat;
@@ -20,7 +21,7 @@
         line-height: 51.34px;
         text-align: left;
         margin: 0 10%;
-        color: #FF6060;
+        color: $primary_color;
     }
     a{
         font-family: Montserrat;

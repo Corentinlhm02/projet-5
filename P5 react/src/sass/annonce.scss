@@ -1,7 +1,6 @@
+@import "colors";
 .info{
-    width: 1440px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin: 2vw 6vw;
 
 
     img{
@@ -9,27 +8,55 @@
         height: 415px;
     }
 
+    .host{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        .hostPhoto{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        p {
+            font-family: Montserrat;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 25.67px;
+            
+        }
+        img{
+            width: 64px;
+            height: 64px;
+            border-radius: 100%;
+            
+        }
+        .title{
+            h3{
+                font-family: Montserrat;
+                height: 100%;
+                font-size: 36px;
+                font-weight: 500;
+                text-align: left;
+                margin: 20px 50px 0 0;
+                color: $primary_color;
+            }
+            p{
+                font-family: Montserrat;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 25.67px;
+                text-align: left;
+                margin: 2px 0 12px 0;
+                
+            }
+            
+
+        }
+    }
+
 }
 
-h3{
-    font-family: Montserrat;
-    height: 100%;
-    font-size: 36px;
-    font-weight: 500;
-    text-align: left;
-    margin-top: 20px;
-    margin-bottom: 0;
-    color: #FF6060;
-}
-p{
-    font-family: Montserrat;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 25.67px;
-    text-align: left;
-    margin: 0;
-    
-}
 
 .button {
     display: flex;
@@ -51,8 +78,28 @@ i {
 .buttonDescription, .buttonEquipements {
     width: 45%;
 }
+.buttonDescription p {
+    padding: 15px 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.67px;
+    text-align: left;
+    margin: 2px 0 12px 0;
+}
+.buttonEquipements ul{
+    margin: 0;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.67px;
+    text-align: left;
+    margin: 2px 0 12px 0;
+    list-style-type: none;
+    padding: 15px 10px;
+}
 .accordion {
-    background-color: #FF6060;
+    background-color: $primary_color;
     height: 52px;
     width: 100%;
     color: white;
@@ -75,11 +122,10 @@ i {
 
 .accordion:hover,
 .accordion:focus {
-    background-color: #FF6060;
+    background-color: $primary_color
 }
 
 .panel {
-    padding: 0 10px;
     background-color: white;
     display: none;
     width: 45%;
@@ -90,8 +136,10 @@ i {
 .panel.open {
     display: block;
     width: 100%;
+    background: $Deroulant;
 
 }
+
 
 //  **********tags**********
 
@@ -122,9 +170,9 @@ i {
     justify-content: space-between;
 }
 .stars{
-    width: 14%;
+    width: 20%;
     display: flex;
-    gap: 8%;
+    justify-content: end;
     .fa-solid{   
         font-size: 24px;
 
@@ -137,28 +185,30 @@ i {
         color: #E3E3E3;
     }
 }
-.host {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 10px;
-    
-    p {
-        font-family: Montserrat;
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 25.67px;
-        
+
+// ********partie responsive*********
+
+@media (max-width: 800px) {
+    .info {
+        margin: 4% 25px ;
     }
-    img{
-        width: 64px;
-        height: 64px;
-        border-radius: 100%;
-        
+    .tagAndStars{
+        flex-direction: column;
     }
-    .hostPhoto{
-        display: flex;
-        align-items: center;
-        gap: 10px;
+    .host{
+        flex-direction: column;
+        align-items: start;
     }
+    .button{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .buttonDescription, .buttonEquipements{
+        width: 100%;
+        height: 40px;
+    }
+    .accordion{
+        height: 40px;
+    }
+
 }

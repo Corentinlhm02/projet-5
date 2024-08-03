@@ -1,5 +1,5 @@
 .about {
-    margin: 30px 100px;
+  margin: 2vw 6vw;
   
     .banner {
       position: relative;
@@ -78,5 +78,35 @@
       }
     }
   }
+
+@media (max-width: 800px) {
+  .about{
+    margin: 4% 25px;
+  }
+  .about .about-section{
+    margin: 0;
+    width: 100%;
+  }
+  .about .about-section button{
+    height: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18.54px;
+    text-align: left;
+    margin-top: 20px;
+      
+  }
+  .about .about-section button i {
+    font-size: 20px;
+  }
+  .about .banner{
+    height: 111px;
+    margin: 0;
+  }
+  .about .about-section p{
+    font-size: 13px;
+    line-height: 20px;
+    padding: 14px 18px;
+  }
   
-  
+}

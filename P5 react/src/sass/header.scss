@@ -49,18 +49,23 @@ header li:hover{
 
 @media (max-width: 800px) {
     header{
-        margin: 4%
+        margin: 4% 25px ;
 
     }
-    ul{
+    nav ul{
         display: flex;
         gap: 10%;
+        padding: 0;
     }
     li{
-        font-size: 15px;
-        font-weight: 550;
+        font-size: 14px;
+        font-weight: 500;
         line-height: 17.11px;
         text-transform: uppercase;
         
+    }
+    header img{
+        width: 145px;
+        height: 48px;
     }
 }
