@@ -19,7 +19,6 @@ function About() {
     <div className='about'>
       <section className="banner">
         <img src={ImageMontagne} alt="logo kasa" />
-        <h1>Chez vous, partout et ailleurs</h1>
       </section>
       <section className="about-section">
         {panels.map((panel, index) => (

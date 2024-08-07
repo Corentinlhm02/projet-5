@@ -118,37 +118,36 @@
 @media (max-width: 800px) {
   .about{
     margin: 4% 25px;
+    .banner{
+      height: 111px;
+      margin: 0;
+      border-radius: 15px;
+      img{
+        border-radius: 15px;
+      }
+    }
+    .about-section{
+      margin: 0;
+      width: 100%;
+      .accordion-container{
+          .panel p {
+            font-size: 13px;
+            line-height: 20px;
+            padding: 15px 20px;
+          }
+        .accordion{
+          height: 30px;
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 18.54px;
+          text-align: left;
+          margin-top: 20px;
+          
+          i{
+            font-size: 20px;
+          }        
+        }
+      }
+    }
   }
-  .about .about-section{
-    margin: 0;
-    width: 100%;
-  }
-  .about .about-section button{
-    height: 30px;
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 18.54px;
-    text-align: left;
-    margin-top: 20px;
-      
-  }
-  .about .about-section button i {
-    font-size: 20px;
-  }
-  .about .banner{
-    height: 111px;
-    margin: 0;
-    border-radius: 15px;
-  }
-
-  .about .banner img{
-    border-radius: 15px;
-  }
-
-  .about .about-section p{
-    font-size: 13px;
-    line-height: 20px;
-    padding: 15px 20px;
-  }
-  
 }

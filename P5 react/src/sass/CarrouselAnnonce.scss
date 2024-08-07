@@ -50,11 +50,15 @@
 @media (max-width: 800px) {
     .carousel{
         height: 225px;
+        border-radius: 15px;
     }
     .carousel-inner img {
     height: 225px;
     }
     .carousel-buttons button {
         font-size: 2rem;
+    }
+    .currentIndex {
+        display: none;
     }
 }

@@ -55,6 +55,10 @@
     .home .banner {
       height: 111px;
       margin: 0 0 20px 0;
+      border-radius: 15px;
+      img {
+        border-radius: 15px;
+      }
     }
    .home h1 {
     font-family: Montserrat;
