@@ -4,19 +4,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 139px;
+    gap: 10vw;
+    margin: 2vw 6vw;
     h1{
+        height: 15vw;
         font-family: Montserrat;
-        margin: 0;
+        margin: 6% 0 0 0;
         font-size: 20vw;
         font-weight: 700;
         line-height: 410.69px;
+        display: flex;
+        align-items: center;
         text-align: center;
         color: $primary_color;
     }
     p{
         font-family: Montserrat;
-        font-size: 36px;
+        font-size: 2.5vw;
         font-weight: 500;
         line-height: 51.34px;
         text-align: left;
@@ -31,5 +35,30 @@
         text-align: left;
         color: black;        
         margin-bottom: 10%;
+    }
+}
+
+@media (max-width: 800px) {
+    .erreur{
+        margin: 4% 25px ;
+        gap: 113px;
+
+        h1{
+            margin: 90px 0 0 0;
+            font-size: 24vw;
+
+        }
+        p{
+            font-size: 18px;
+            line-height: normal;
+            text-align: center;
+            margin: 0 8%;
+        }
+        a{
+            margin-bottom: 113px;
+            font-size: 14px;
+            line-height: 19.96px;
+            
+        }
     }
 }

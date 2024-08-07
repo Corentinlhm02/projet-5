@@ -11,6 +11,16 @@ const Carousel = ({ pictures }) => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % pictures.length);
     };
 
+    if (pictures.length === 1) {
+        return (
+            <div className="carousel">
+                <div className="carousel-inner">
+                    <img src={pictures[0]} alt="Single Picture" />
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="carousel">
             <div className="carousel-inner" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
@@ -31,4 +41,3 @@ const Carousel = ({ pictures }) => {
 };
 
 export default Carousel;
-

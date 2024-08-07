@@ -57,11 +57,14 @@
 
 }
 
-
 .button {
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
+
+    .buttonDescription, .buttonEquipements {
+        width: 45%;
+    }
 }
 
 i {
@@ -75,9 +78,6 @@ i {
     transform: rotate(180deg);
 }
 
-.buttonDescription, .buttonEquipements {
-    width: 45%;
-}
 .buttonDescription p {
     padding: 15px 10px;
     font-family: Montserrat;
@@ -87,7 +87,8 @@ i {
     text-align: left;
     margin: 2px 0 12px 0;
 }
-.buttonEquipements ul{
+
+.buttonEquipements ul {
     margin: 0;
     font-family: Montserrat;
     font-size: 16px;
@@ -98,6 +99,7 @@ i {
     list-style-type: none;
     padding: 15px 10px;
 }
+
 .accordion {
     background-color: $primary_color;
     height: 52px;
@@ -127,63 +129,60 @@ i {
 
 .panel {
     background-color: white;
-    display: none;
-    width: 45%;
-
-
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    width: 100%; /* Adjusted width to match accordion button */
 }
 
 .panel.open {
-    display: block;
-    width: 100%;
+    max-height: 500px; /* Adjust to a value large enough to contain your content */
     background: $Deroulant;
-
 }
 
 
-//  **********tags**********
 
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; 
-    margin-bottom: 20px;
-}
-
-.tag {
-    background-color: #FF6060;
-    color: white;
-    padding: 5px 10px; 
-    border-radius: 12px; 
-    margin: 5px 0; 
-    font-size: 14px; 
-    font-family: Montserrat;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 19.96px;
-    text-align: center;
-    
-}
+//  **********tags et étoiles **********
 .tagAndStars{
     width: 100%;
     display: flex;
     justify-content: space-between;
-}
-.stars{
-    width: 20%;
-    display: flex;
-    justify-content: end;
-    .fa-solid{   
-        font-size: 24px;
-
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; 
+        margin-bottom: 20px;
+        .tag {
+            background-color: #FF6060;
+            color: white;
+            padding: 5px 10px; 
+            border-radius: 12px; 
+            margin: 5px 0; 
+            font-size: 14px; 
+            font-family: Montserrat;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 19.96px;
+            text-align: center;
+        }
     }
-    .star-colored {
-        color: #FF6060;
-        
+    .stars{
+        width: 20%;
+        display: flex;
+        justify-content: end;
+        .fa-solid{   
+            font-size: 24px;
+    
+        }
+        .star-colored {
+            color: #FF6060;
+            
+        }
+        .star-grey {
+            color: #E3E3E3;
+        }
     }
-    .star-grey {
-        color: #E3E3E3;
-    }
+    
 }
 
 // ********partie responsive*********
@@ -194,21 +193,46 @@ i {
     }
     .tagAndStars{
         flex-direction: column;
+        .tag{
+            margin-bottom: 0;
+        }
+        .stars{
+            justify-content: start;
+            margin-bottom: 20px;
+                .fa-solid{   
+                    font-size: 18px;
+                    margin: 0 5px;
+            
+                }
+        }
+    
     }
     .host{
         flex-direction: column;
         align-items: start;
+
+        .hostPhoto{
+            position: relative;
+            left: 25%;
+            top: 95px;
+            img {
+                width: 33px;
+                height: 33px;
+            }
+        }
     }
     .button{
         flex-direction: column;
         gap: 20px;
+        .buttonDescription, .buttonEquipements{
+            width: 100%;
+            height: 40px;
+        }
     }
-    .buttonDescription, .buttonEquipements{
-        width: 100%;
-        height: 40px;
-    }
+
     .accordion{
         height: 40px;
     }
+
 
 }
