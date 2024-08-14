@@ -13,24 +13,7 @@
         align-items: center;
         justify-content: space-between;
         margin-top: 10px;
-        .hostPhoto{
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        p {
-            font-family: Montserrat;
-            font-size: 18px;
-            font-weight: 500;
-            line-height: 25.67px;
-            
-        }
-        img{
-            width: 64px;
-            height: 64px;
-            border-radius: 100%;
-            
-        }
+
         .title{
             h3{
                 font-family: Montserrat;
@@ -50,7 +33,51 @@
                 margin: 2px 0 12px 0;             
             }
         }
+        .HostAndStars{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+            .hostPhoto{
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                gap: 14px;               
+                p {
+                    font-family: Montserrat;
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 25.67px;
+                    color: $primary_color;
+                    
+                }
+                img{
+                    width: 64px;
+                    height: 64px;
+                    border-radius: 100%;
+                    
+                }
+            }
+            .stars{
+                display: flex;      
+                justify-content: end;
+                .fa-solid{   
+                    font-size: 24px;
+            
+                }
+                .star-colored {
+                    color: $primary_color;
+                    
+                }
+                .star-grey {
+                    color: #E3E3E3;
+                }
+            }
+        }
     }
+
 }
 
 .button {
@@ -128,21 +155,18 @@ i {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease;
-    width: 100%; /* Adjusted width to match accordion button */
+    width: 100%; 
 }
 
 .panel.open {
-    max-height: 500px; /* Adjust to a value large enough to contain your content */
+    max-height: 500px; 
     background: $Deroulant;
 }
 
 
 
-//  **********tags et étoiles **********
-.tagAndStars{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+//  **********tags **********
+
     .tags {
         display: flex;
         flex-wrap: wrap;
@@ -162,70 +186,66 @@ i {
             text-align: center;
         }
     }
-    .stars{
-        width: 20%;
-        display: flex;
-        justify-content: end;
-        .fa-solid{   
-            font-size: 24px;
-    
-        }
-        .star-colored {
-            color: #FF6060;
-            
-        }
-        .star-grey {
-            color: #E3E3E3;
-        }
-    }
-    
-}
+
 
 // ********partie responsive*********
 
 @media (max-width: 800px) {
     .info {
         margin: 4% 25px ;
+        flex-direction: column;
+        align-items: start;
         .host{
-            align-items: normal;
+            flex-direction: column;
+            align-items: start;
             .title{
                 h3{
                     font-size: 18px;
                     margin: 0;
                 }
+                .tags {
+                    margin-bottom: 0;
+                    .tag{
+                        margin-bottom: 0;
+                        border-radius: 10px;
+                    }
+                }
             }
-        }
-    }
-    .tagAndStars{
-        flex-direction: column;
-        .tag{
-            margin-bottom: 0;
-        }
-        .stars{
-            justify-content: start;
-            margin-bottom: 20px;
-                .fa-solid{   
-                    font-size: 18px;
-                    margin: 0 5px;
-            
+            .HostAndStars{   
+                width: 100%;
+                display: flex;
+                flex-direction: row-reverse;  
+                justify-content: space-between;      
+                align-items: center;
+                margin: 0;
+                .hostPhoto{
+                    p{
+                        font-size: 14px;
+                        line-height: 17px;
+                    }
+                    img {
+                        width: 33px;
+                        height: 33px;
+                    }
+                }
+                .stars{
+                    justify-content: start;
+                        .fa-solid{   
+                            font-size: 18px;
+                            margin: 0 5px;
+                    
+                        }
                 }
         }
-    
     }
-    .host{
-        flex-direction: column;
-        align-items: start;
 
-        .hostPhoto{
-            position: relative;
-            left: 25%;
-            top: 95px;
-            img {
-                width: 33px;
-                height: 33px;
-            }
+        
+        
         }
-    }
+    
+
+
+
     .button{
         flex-direction: column;
         gap: 20px;

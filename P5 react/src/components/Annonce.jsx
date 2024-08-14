@@ -50,25 +50,28 @@ const Annonce = () => {
             <div className="info"> 
             <Carousel pictures={pictures} />
             <div className="host">
-            <div className="title">
-                <h3>{annonce.title}</h3>
-                <p>{annonce.location}</p>
-            </div>
-                <div className="hostPhoto">
-                    <p>{annonce.host.name}</p>
-                    <img src={hostPicture} alt="" />
-                </div> 
-            </div>
-            <div className="tagAndStars">
-                <div className="tags">
+                <div className="title">
+                    <h3>{annonce.title}</h3>
+                    <p>{annonce.location}</p>
+                    <div className="tags">
                         {annonce.tags.map((tag, index) => (
                             <span key={index} className="tag">{tag}</span>
                         ))}
                 </div>
-                <div className="stars">
+                </div>                        
+                <div className="HostAndStars">
+                    <div className="hostPhoto">
+                        <p>        
+                        {annonce.host.name.split(' ')[0]}<br />
+                        {annonce.host.name.split(' ')[1]}
+                        </p>
+                        <img src={hostPicture} alt="" />
+                    </div>
+                    <div className="stars">
                     {renderStars(rating)}
+                    </div>
                 </div>
-            </div>
+            </div>             
             <div className="button">
                 <div className="buttonDescription">
                     <button className="accordion" onClick={toggleDescription}>

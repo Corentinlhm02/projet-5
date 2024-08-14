@@ -58,6 +58,9 @@ cursor: pointer;
     .thumb {
         aspect-ratio: initial;
     }
+    .thumb img {
+        height: 255px;
+    }
     
     
 }
