@@ -152,14 +152,15 @@ i {
 
 .panel {
     background-color: white;
-    max-height: 0;
+    display: none;
     overflow: hidden;
     transition: max-height 0.4s ease;
     width: 100%; 
+    
 }
 
 .panel.open {
-    max-height: 500px; 
+    display: block;
     background: $Deroulant;
 }
 
