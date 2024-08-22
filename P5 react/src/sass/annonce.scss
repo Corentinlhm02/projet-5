@@ -63,6 +63,7 @@
             .stars{
                 display: flex;      
                 justify-content: end;
+                gap: 12px;
                 .fa-solid{   
                     font-size: 24px;
             
@@ -85,85 +86,88 @@
     justify-content: space-between;
     margin-bottom: 40px;
 
-    .buttonDescription, .buttonEquipements {
+    .accordion-container{
         width: 45%;
+
+        .accordion{
+            margin: 0;
+            background-color: $primary_color;
+            height: 52px;
+            width: 100%;
+            color: white;
+            cursor: pointer;
+            border-radius: 12px;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            position: relative;
+            font-family: Montserrat;
+            font-weight: 800;
+            line-height: 34.22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            i {
+                margin-left: 10px;
+                font-size: 25px;
+                margin-right: 10px;
+                transition: transform 0.3s ease;
+            }
+
+            i.open {
+                transform: rotate(180deg);
+            }
+        }
+        .panel {
+            max-height: 0; /* Initial height of the panel is 0 */
+            overflow: hidden;
+            transition: max-height 0.4s ease-out; /* Smooth transition for height */
+            opacity: 0;
+            width: 100%; 
+        }
+
+        .panel.open {
+            max-height: 500px; /* Set this to a value large enough for the content */
+            opacity: 1;
+            transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+            background: $Deroulant;
+
+            p {
+                padding: 15px 10px;
+                font-family: Montserrat;
+                font-size: 16px;
+                font-weight: 450;
+                line-height: 25.67px;
+                text-align: left;
+                margin: 2px 0 12px 0;
+            }
+            
+            ul {
+                margin: 0;
+                font-family: Montserrat;
+                font-size: 16px;
+                font-weight: 450;
+                line-height: 25.67px;
+                text-align: left;
+                margin: 2px 0 12px 0;
+                list-style-type: none;
+                padding: 15px 20px;
+                li{
+                    text-transform: none;
+                    font-weight: 450;
+                }
+            }
+        }
     }
 }
-
-i {
-    margin-left: 10px;
-    font-size: 25px;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
-}
-
-.accordion i.open {
-    transform: rotate(180deg);
-}
-
-.buttonDescription p {
-    padding: 15px 10px;
-    font-family: Montserrat;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 25.67px;
-    text-align: left;
-    margin: 2px 0 12px 0;
-}
-
-.buttonEquipements ul {
-    margin: 0;
-    font-family: Montserrat;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 25.67px;
-    text-align: left;
-    margin: 2px 0 12px 0;
-    list-style-type: none;
-    padding: 15px 10px;
-}
-
-.accordion {
-    background-color: $primary_color;
-    height: 52px;
-    width: 100%;
-    color: white;
-    cursor: pointer;
-    border-radius: 12px;
-    padding: 10px;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-    position: relative;
-    font-family: Montserrat;
-    font-weight: 800;
-    line-height: 34.22px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .accordion:hover,
 .accordion:focus {
     background-color: $primary_color
 }
-
-.panel {
-    background-color: white;
-    display: none;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    width: 100%; 
-    
-}
-
-.panel.open {
-    display: block;
-    background: $Deroulant;
-}
-
 
 
 //  **********tags **********
@@ -208,7 +212,12 @@ i {
                     margin-bottom: 0;
                     .tag{
                         margin-bottom: 0;
-                        border-radius: 10px;
+                        padding: 3px 25px;
+                        border-radius: 5px;
+                        font-size: 10px;
+                        line-height: 14.26px;
+
+                        
                     }
                 }
             }
@@ -218,11 +227,12 @@ i {
                 flex-direction: row-reverse;  
                 justify-content: space-between;      
                 align-items: center;
-                margin: 0;
+                margin: 15px 0 15px 0; 
                 .hostPhoto{
                     p{
                         font-size: 14px;
                         line-height: 17px;
+                        margin: 0;
                     }
                     img {
                         width: 33px;
@@ -231,18 +241,18 @@ i {
                 }
                 .stars{
                     justify-content: start;
-                        .fa-solid{   
-                            font-size: 18px;
-                            margin: 0 5px;
-                    
-                        }
-                }
+                    gap: 0;
+                    margin-top: 5px;
+                    .fa-solid{   
+                        font-size: 15px;
+                        margin: 0 3px;
+                
+                    }
+               }
+            }
         }
-    }
-
+    }      
         
-        
-        }
     
 
 
@@ -250,15 +260,38 @@ i {
     .button{
         flex-direction: column;
         gap: 20px;
-        .buttonDescription, .buttonEquipements{
+        margin-bottom: 25px;
+    
+        .accordion-container{
             width: 100%;
-            height: 40px;
+            .panel.open p {
+                height: auto;
+                font-size: 13px;
+                line-height: 20px;
+                padding: 15px 20px;
+            }
+            .panel.open ul {
+                margin: 0;
+                font-size: 13px;
+                line-height: 20px;
+                text-align: left;
+                font-weight: 400;
+            }
+                
+          .accordion{       
+            height: 30px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 18.54px;
+            text-align: left;
+            margin-top: 0px;
+            
+            i{
+              font-size: 20px;
+            }        
+          }
         }
     }
-
-    .accordion{
-        height: 40px;
-    }
-
 
 }
