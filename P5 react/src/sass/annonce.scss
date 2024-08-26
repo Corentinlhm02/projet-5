@@ -118,9 +118,6 @@
                 transition: transform 0.3s ease;
             }
 
-            i.open {
-                transform: rotate(180deg);
-            }
         }
         .panel {
             max-height: 0; /* Initial height of the panel is 0 */
