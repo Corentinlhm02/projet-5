@@ -9,7 +9,7 @@ const root = createRoot(container); // Créez un root
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter> {/* Entourez votre application avec BrowserRouter */}
+    <BrowserRouter> 
       <App />
     </BrowserRouter>
   </React.StrictMode>,
